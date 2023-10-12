@@ -2,9 +2,11 @@
 import React from 'react'
 import { useRouter } from 'next/router'
 
+
+
 import Text from '@/components/text/text'
 import { Input } from '@/components/input/input'
-
+import { Box } from '@chakra-ui/react'
 
 
 function Signup() {
@@ -26,15 +28,16 @@ function Signup() {
                     fwt={400}
                     ftz='32px'
                 />
-                
-                <Text 
-                    text='Welcome back' 
-                    color='#080E11'
-                    fwt={400}
-                    ftz='12px'
-                    marginTop= "10px"
-                />
 
+                <Box mt={"10PX"} >
+                    <Text 
+                        text='Welcome back' 
+                        color='#080E11'
+                        fwt={400}
+                        ftz='12px'
+                    />
+                </Box>
+            
                 <form style={formStyle} onSubmit={handleSubmit} action="">
 
                     <Input placeHolder='Email' type='email'/>

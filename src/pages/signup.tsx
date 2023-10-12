@@ -7,6 +7,7 @@ import { useRouter } from 'next/router'
 
 import Text from '@/components/text/text'
 import { Input } from '@/components/input/input'
+import { Box } from '@chakra-ui/react'
 
 
 
@@ -32,14 +33,16 @@ function Signup() {
                     fwt={400}
                     ftz='32px'
                 />
+
+                <Box mt={"10px"}>
+                    <Text 
+                        text='Complete your details below to sign up' 
+                        color='#080E11'
+                        fwt={400}
+                        ftz='12px'
+                    />
+                </Box>
                 
-                <Text 
-                    text='Complete your details below to sign up' 
-                    color='#080E11'
-                    fwt={400}
-                    ftz='12px'
-                    marginTop= "10px"
-                />
 
                 <form style={formStyle} onSubmit={handleSubmit} action="">
 
@@ -56,7 +59,12 @@ function Signup() {
                     </div>
 
                     <div style={termsCont}>
-                        <p style={terms} >By logging in you agree to our  
+                        <p style={{
+                            fontFamily: 'Poppins',
+                            fontSize: "8px",
+                            fontStyle: "normal",
+                            textAlign:"center"
+                        }} >By logging in you agree to our  
                             <span style={color} >Terms and Conditions </span> 
                             and <span style={color} >Privacy Policy </span> 
                         </p>
@@ -117,12 +125,6 @@ const smallCont={
     marginRight: "16px"
 }
 
-const terms = {
-    fontFamily: 'Poppins',
-    fontSize: "8px",
-    fontStyle: "normal",
-    textAlign:"center"
-}
 
 const termsCont ={
     width :"230px",

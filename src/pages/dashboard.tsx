@@ -51,8 +51,6 @@ function Dashboard() {
            <Input 
             placeHolder='Find people in your location' 
             type='search' 
-            border="1px solid #E76F51"
-            width="100%"
           />
 
         <HStack 

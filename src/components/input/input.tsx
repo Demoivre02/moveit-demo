@@ -22,10 +22,10 @@ function Input({placeHolder,type, ...rest} : props) {
         color: "#6E848C",
         fontSize: "12px",
         borderRadius: "8px",
-        border:"1px solid #26465380",
+        // border:"1px solid #26465380",
         display:"block",
         marginTop: "1em",
-        ...rest
+        border:"1px solid #E76F51"
     }
     
 
