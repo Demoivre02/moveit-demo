@@ -8,13 +8,14 @@ import { HStack , Image, VStack,Box, Button } from '@chakra-ui/react';
 import Topnav from '@/components/navbar.tsx/topnav'
 import Navbar from '@/components/navbar.tsx/navbar'
 import Text from '@/components/text/text'
+import Mode from '@/components/modes';
 
 
 const MyAwesomeMap = dynamic(() => import("@/components/map/map"), { ssr:false })
 
 function Ride() {
   return (
-    <Box overflow={"scroll"} h={"90vh"} ring={1} >
+    <Box overflow={"scroll"} h={"85vh"} >
         <Topnav/>
         <MyAwesomeMap/>
 
@@ -50,18 +51,16 @@ function Book (){
                 />
             </VStack>
 
-            <HStack  >
-                <Image 
-                    mt={"4px"}
-                    rounded={"4px"}
-                    maxW={"100%"} 
-                    src='/assets/images/Group 6.png' 
-                    />
-                <Image 
-                    mt={"4px"}
-                    rounded={"4px"}
-                    maxW={"100%"} 
-                    src='/assets/images/Frame 111.png' 
+            <HStack mt={"10px"} >
+                <Mode 
+                    src='/assets/images/keke.png' 
+                    name='Napep' 
+                    price={150} 
+                />
+                <Mode 
+                    src='/assets/images/bicycle.png' 
+                    name='Bicycle' 
+                    price={200} 
                 />
         </HStack>
         <HStack mt={"24px"} gap={"1em"} ml={"5px"} >
