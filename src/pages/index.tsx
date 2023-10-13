@@ -43,7 +43,13 @@ function SplashScreen() {
       display={"grid"}
       placeItems={"center"}
     >
-      <Text fontFamily={"poor"} fontSize={"56px"} color={"#080E11"} margin={0}>
+      <Text 
+        fontFamily={"poor"} 
+        fontSize={"56px"} 
+        color={"#080E11"} 
+        pb={"2em"}
+        margin={0}
+      >
         Move it
       </Text>
     </Box>
@@ -53,7 +59,7 @@ function SplashScreen() {
 function Landing() {
   return (
     <VStack
-      pb={"3em"}
+      pb={"7em"}
       bgImage={'/assets/images/buttons.png'}
       bgSize={"cover"}
       justifyContent={"flex-end"}

@@ -36,12 +36,12 @@ const data =[
 
 function Dashboard() {
   return (
-    <div>
+    <Box  overflow={"scroll"} h={"90vh"}>
       <Topnav/>
 
-      <Box  p={"1em"} py={".3em"}>
+      <Box  p={"1em"} py={"1em"} >
 
-        <Text 
+          <Text 
             text='Hello Mary!' 
             color='#080E11'
             fwt={400}
@@ -121,7 +121,7 @@ function Dashboard() {
       </Box>
       
       <Navbar/>
-    </div>
+    </Box>
   )
 }
 
