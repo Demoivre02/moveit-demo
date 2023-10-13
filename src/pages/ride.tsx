@@ -15,7 +15,7 @@ const MyAwesomeMap = dynamic(() => import("@/components/map/map"), { ssr:false }
 
 function Ride() {
   return (
-    <Box overflow={"scroll"} h={"100vh"} >
+    <Box overflow={"scroll"} h={"90vh"} >
         <Topnav/>
         <MyAwesomeMap/>
 
