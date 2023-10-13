@@ -1,7 +1,8 @@
 "use client"
 import React from 'react'
-import { useRouter } from 'next/router'
 
+import { useRouter } from 'next/router'
+import Link from 'next/link'
 
 
 import Text from '@/components/text/text'
@@ -43,10 +44,14 @@ function Signup() {
                     <Input placeHolder='Email' type='email'/>
                     <Input placeHolder='Password' type='password' />
                     <div style={buttonParent}>
-                        <button style={buttonStyle}>Sign up</button>
+                        <button style={buttonStyle}>Log in</button>
                     </div>
                     <div style={smallCont}>
-                        <small style={small}>Forgotten password?</small>
+                        <small style={small}>Don't have an account? {' '}
+                        <Link style={link} href={"/signup"} >Sign up</Link> </small>
+                    </div>
+                    <div style={smallCont}>
+                        <small style={small}>Forgot password?</small>
                     </div>
 
 
@@ -61,6 +66,12 @@ function Signup() {
 const formStyle = {
     display: "block",
     margin: "auto",
+}
+
+const link ={
+    color: "#264653",
+    textDecoration:"none",
+    fontWeight:"600"
 }
 
 const buttonStyle ={
