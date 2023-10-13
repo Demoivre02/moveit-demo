@@ -36,7 +36,7 @@ const data =[
 
 function Dashboard() {
   return (
-    <Box  overflow={"scroll"} h={"90vh"}>
+    <Box  overflow={"scroll"} h={"80vh"}>
       <Topnav/>
 
       <Box  p={"1em"} py={"1em"} >
