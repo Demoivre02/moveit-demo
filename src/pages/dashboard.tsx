@@ -11,32 +11,9 @@ import Myavatar from '@/components/people/avatar'
 
 
 
-const data =[
-  {
-    name: "Idris",
-    location:"CHE",
-    src:"/assets/images/male1.png"
-  },
-  {
-    name: "Mary",
-    location:"BOT",
-    src:"/assets/images/female1.png"
-  },
-  {
-    name: "David",
-    location:"Phy",
-    src:"/assets/images/male2.png"
-  },
-  {
-    name: "Rodiat",
-    location:"ZOO",
-    src:"/assets/images/female2.png"
-  },
-]
-
 function Dashboard() {
   return (
-    <Box  overflow={"scroll"} h={"100vh"}>
+    <Box  overflow={"scroll"} h={"90vh"}>
       <Topnav/>
 
       <Box  p={"1em"} py={"1em"} >
@@ -126,3 +103,26 @@ function Dashboard() {
 }
 
 export default Dashboard
+
+const data =[
+  {
+    name: "Idris",
+    location:"CHE",
+    src:"/assets/images/male1.png"
+  },
+  {
+    name: "Mary",
+    location:"BOT",
+    src:"/assets/images/female1.png"
+  },
+  {
+    name: "David",
+    location:"Phy",
+    src:"/assets/images/male2.png"
+  },
+  {
+    name: "Rodiat",
+    location:"ZOO",
+    src:"/assets/images/female2.png"
+  },
+]

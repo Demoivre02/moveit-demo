@@ -12,7 +12,7 @@ import { Box } from '@chakra-ui/react'
 
 
 
-function Signup() {
+function Rider() {
 
     const router = useRouter()
 
@@ -26,49 +26,25 @@ function Signup() {
         <div style={fluid}>
             <div style={container}>
                 <Text 
-                    text='Welcome' 
+                    text='Become a Rider' 
                     color='#080E11'
                     fwt={400}
                     ftz='32px'
                 />
 
-                <Box mt={"10px"}>
-                    <Text 
-                        text='Complete your details below to sign up' 
-                        color='#080E11'
-                        fwt={400}
-                        ftz='12px'
-                    />
-                </Box>
-                
 
                 <form style={formStyle} onSubmit={handleSubmit} action="">
 
-                    <Input placeHolder='Email' type='email'/>
-                    <Input placeHolder='Username' type='text' />
-                    <Input placeHolder='Phone number' type='num' />
-                    <Input placeHolder='Password' type='password' />
+                    <Input placeHolder='Name' type='text'/>
+                    <Input placeHolder='Tricycle ID NO.' type='text' />
+                    <Input placeHolder='Tricycle Plate NO.' type='text' />
+                    <Input placeHolder='Driver’s license' type='text' />
+                    <Input placeHolder='Date of birth' type='date' />
+                    <Input placeHolder='Address' type='text' />
+                    <Input placeHolder='Add a picture' type='file' />
                     <div style={buttonParent}>
-                        <button style={buttonStyle}>Sign up</button>
+                        <button style={buttonStyle}>Submit</button>
                     </div>
-                    <div style={smallCont}>
-                        <small style={small}>already have an account? {' '}
-                        <Link style={link} href={"/login"} >log in</Link> </small>
-                    </div>
-
-                    <div style={termsCont}>
-                        <p style={{
-                            fontFamily: 'Poppins',
-                            fontSize: "8px",
-                            fontStyle: "normal",
-                            textAlign:"center"
-                        }} >By logging in you agree to our  
-                            <span style={color} >Terms and Conditions </span> 
-                            and <span style={color} >Privacy Policy </span> 
-                        </p>
-                    </div>
-
-                    
 
                 </form>
             </div>
@@ -148,4 +124,4 @@ const link ={
 
 
 
-export default Signup
+export default Rider

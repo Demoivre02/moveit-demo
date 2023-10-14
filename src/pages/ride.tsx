@@ -1,6 +1,8 @@
 import React from 'react'
 
 import dynamic from "next/dynamic"
+import Link from 'next/link'
+
 import { Icon } from '@iconify/react';
 import { HStack , Image, VStack,Box, Button } from '@chakra-ui/react';
 
@@ -34,7 +36,12 @@ function Book (){
             <VStack alignItems={"flex-start"}>
                 
                 <HStack>
-                    <Icon icon="mingcute:right-line" color="#080e11" width="36" height="36" />
+                    <Icon 
+                        icon="mingcute:right-line" 
+                        color="#080e11" 
+                        width="36" 
+                        height="36" 
+                    />
                     <Text 
                         text='Awo Hall' 
                         color='#080E11'
@@ -63,7 +70,12 @@ function Book (){
                     price={200} 
                 />
         </HStack>
-        <HStack mt={"24px"} gap={"1em"} ml={"5px"} >
+
+        <HStack 
+            mt={"24px"} 
+            gap={"1em"} 
+            ml={"5px"} 
+        >
             <Box 
                 p={"12px"} 
                 rounded={"8px"}
@@ -72,19 +84,23 @@ function Book (){
             >
                 <Icon icon="simple-line-icons:calender" color="#080e11" width="20" />
             </Box>
-           <Button 
-                w={"256px"} 
-                h={"44px"} 
-                bg={"#E76F51"}
-                rounded={"8px"}
-                p={"10px"}
-                fontFamily={"Poppins"}
-                fontSize={"15px"}
-                color={"#080E11"}
-                fontWeight={400}
-            >
-                Book Now
-            </Button>
+            
+            <Link href={"/book"}>
+                <Button 
+                    w={"256px"} 
+                    h={"44px"} 
+                    bg={"#E76F51"}
+                    rounded={"8px"}
+                    p={"10px"}
+                    fontFamily={"Poppins"}
+                    fontSize={"15px"}
+                    color={"#080E11"}
+                    fontWeight={400}
+                >
+                    Book Now
+                </Button>
+            </Link>
+           
         </HStack>
     </Box>
     )
