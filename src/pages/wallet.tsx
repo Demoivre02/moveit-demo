@@ -11,7 +11,7 @@ function Wallet() {
     const accNumber : string = "8057798265"
 
   return (
-    <Box p={"1em"} pt={"2em"} h={"90vh"}>
+    <Box p={"1em"} pt={"2em"} overflow={"scroll"} h={"90vh"}>
 
         <Text 
             text='Wallet' 

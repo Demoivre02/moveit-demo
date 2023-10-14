@@ -61,7 +61,7 @@ function Book (){
             <HStack mt={"10px"} >
                 <Mode 
                     src='/assets/images/keke.png' 
-                    name='Napep' 
+                    name='Tricycle' 
                     price={150} 
                 />
                 <Mode 
@@ -84,7 +84,7 @@ function Book (){
             >
                 <Icon icon="simple-line-icons:calender" color="#080e11" width="20" />
             </Box>
-            
+
             <Link href={"/book"}>
                 <Button 
                     w={"256px"} 
