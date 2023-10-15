@@ -4,10 +4,12 @@ import React, {useState} from 'react'
 import { useRouter } from 'next/router'
 import Link from 'next/link'
 
-import { signInWithEmailAndPassword } from 'firebase/auth';
+import { signInWithEmailAndPassword } from 'firebase/auth';;
+
+
 import { getAuth, GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
 
-import {auth} from '../firebase'
+import {app, auth} from '../firebase'
 import { useUser } from '@/context/usercontest';
 import Text from '@/components/text/text'
 import { Input } from '@/components/input/input'
@@ -16,8 +18,10 @@ import { Box } from '@chakra-ui/react'
 
 function Signup() {
 
+    const auth = getAuth();
     const router = useRouter()
     const { setUser } = useUser();
+    const provider = new GoogleAuthProvider();
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
@@ -43,7 +47,7 @@ function Signup() {
 
     const handleGoogleSignIn = async () => {
         const authProvider = new GoogleAuthProvider();
-        const authInstance = getAuth();
+        const authInstance = getAuth(app);
     
         try {
           const result = await signInWithPopup(authInstance, authProvider);
@@ -56,6 +60,11 @@ function Signup() {
           console.error('Google login error:', error);
         }
     }
+
+    
+
+
+   
 
   return (
     <>
@@ -92,9 +101,7 @@ function Signup() {
                     <div style={buttonParent}>
                         <button style={buttonStyle}>Log in</button>
                     </div>
-                    <div>
-                        <button onClick={handleGoogleSignIn}>Log in with google</button>
-                    </div>
+                   
                     <div style={smallCont}>
                         <small style={small}>Don't have an account? {' '}
                         <Link style={link} href={"/signup"} >Sign up</Link> </small>
@@ -105,6 +112,10 @@ function Signup() {
 
 
                 </form>
+
+                    <div>
+                        <button style={google} onClick={handleGoogleSignIn}>Sign in with google</button>
+                    </div>
             </div>
         </div>
     </>
@@ -132,6 +143,21 @@ const buttonStyle ={
     background: "#E76F51",
     fontSize:"16px",
     color: "white",
+    border: "0",
+    outline: 0,
+    borderRadius: "8px",
+    marginTop:"2em"
+}
+
+const google ={
+    maxWidth: "342px",
+    width:"98%",
+    height:"44px",
+    paddingInline: "13px",
+    margin:"auto",
+    background: "#fff",
+    fontSize:"16px",
+    color: "#E76F51",
     border: "0",
     outline: 0,
     borderRadius: "8px",

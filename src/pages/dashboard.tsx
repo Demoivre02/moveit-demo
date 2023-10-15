@@ -26,7 +26,7 @@ function Dashboard() {
       <Box  p={"1em"} py={"1em"} >
 
           <Text 
-            text =  { 'Hello' + ' ' +  user?.displayName} 
+              text={user?.displayName ? `Welcome ${user.displayName}` : 'Welcome user'}
             color='#080E11'
             fwt={400}
             ftz='16px'

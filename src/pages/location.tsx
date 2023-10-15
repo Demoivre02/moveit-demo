@@ -34,7 +34,7 @@ function Location() {
       <Box mt={"2em"} p={"1em"}>
 
         <Text 
-          text =  { 'Welcome' + ' ' +  user?.displayName}
+            text={user?.displayName ? `Welcome ${user.displayName}` : 'Welcome user'}
           color='#080E11'
           fwt={400}
           ftz='16px'

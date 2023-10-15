@@ -26,11 +26,13 @@ function Ride() {
     <Box overflow={"scroll"} h={"90vh"} >
         <Topnav/>
 
-        <Input 
-            placeHolder='Find people in your location' 
-            type='search' 
-            onInputChange={doNothing}
-        />
+        <Box p={"1em"}>
+            <Input 
+                placeHolder='Find people in your location' 
+                type='search' 
+                onInputChange={doNothing}
+            />
+        </Box>
 
         <MyAwesomeMap/>
 
