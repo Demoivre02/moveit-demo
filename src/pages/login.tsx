@@ -6,8 +6,7 @@ import Link from 'next/link'
 
 import { signInWithEmailAndPassword } from 'firebase/auth';;
 
-
-import { getAuth, GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
+import { getAuth, GoogleAuthProvider, signInWithRedirect, getRedirectResult } from 'firebase/auth';
 
 import {app, auth} from '../firebase'
 import { useUser } from '@/context/usercontest';
@@ -18,7 +17,7 @@ import { Box } from '@chakra-ui/react'
 
 function Signup() {
 
-    const auth = getAuth();
+    const auth = getAuth(app);
     const router = useRouter()
     const { setUser } = useUser();
     const provider = new GoogleAuthProvider();
@@ -47,19 +46,17 @@ function Signup() {
 
     const handleGoogleSignIn = async () => {
         const authProvider = new GoogleAuthProvider();
-        const authInstance = getAuth(app);
-    
+        const authInstance = getAuth();
+      
         try {
-          const result = await signInWithPopup(authInstance, authProvider);
-          // Successful Google login
-          console.log('Google User:', result.user);
-          setUser(result.user);
-          router.push('/location'); 
-
+          await signInWithRedirect(authInstance, authProvider);
+      
+          // The sign-in process will redirect the user to Google for authentication.
+      
         } catch (error) {
           console.error('Google login error:', error);
         }
-    }
+      }
 
     
 
