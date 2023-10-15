@@ -15,6 +15,9 @@ import Myavatar from '@/components/people/avatar'
 function Dashboard() {
 
   const {user} = useUser()
+  function doNothing(){
+    return null
+  }
 
   return (
     <Box  overflow={"scroll"} h={"90vh"}>
@@ -29,9 +32,12 @@ function Dashboard() {
             ftz='16px'
           />
 
+          lets talk about this tomorrow
+
            <Input 
             placeHolder='Find people in your location' 
             type='search' 
+            onInputChange={doNothing}
           />
 
 
