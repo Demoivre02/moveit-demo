@@ -32,7 +32,7 @@ function Dashboard() {
             ftz='16px'
           />
 
-          lets talk about this tomorrow
+          {/* lets talk about this tomorrow */}
 
            <Input 
             placeHolder='Find people in your location' 
