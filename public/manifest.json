@@ -9,22 +9,22 @@
     "description": "Move-it PWA",
     "icons": [
         {
-            "src": "/assets/images//move-it.jpeg",
+            "src": "/assets/images/move-it.jpeg",
             "sizes": "192x192",
             "type": "image/png"
         },
         {
-            "src": "/assets/images//move-it.jpeg",
+            "src": "/assets/images/move-it.jpeg",
             "sizes": "256x256",
             "type": "image/png"
         },
         {
-            "src": "/assets/images//move-it.jpeg",
+            "src": "/assets/images/move-it.jpeg",
             "sizes": "384x384",
             "type": "image/png"
         },
         {
-            "src": "/assets/images//move-it.jpeg",
+            "src": "/assets/images/move-it.jpeg",
             "sizes": "512x512",
             "type": "image/png"
         }
