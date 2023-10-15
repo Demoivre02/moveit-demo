@@ -15,6 +15,9 @@ function Location() {
 
   const router = useRouter()
   const {user} = useUser()
+  function doNothing(){
+    return null
+  }
 
   function handleSubmit(e:any){
       e.preventDefault()
@@ -41,6 +44,7 @@ function Location() {
           <Input 
             placeHolder='Enter your location' 
             type='text' 
+            onInputChange={doNothing}
           />
            <HStack w={"100%"} justifyContent={"flex-end"} mt={"2em"} >
             <Button
