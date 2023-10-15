@@ -7,10 +7,11 @@ interface props {
     placeHolder: string
     type: string
     rest? :React.HTMLProps<HTMLParagraphElement>;
+    onInputChange: (value: string) => void;
 }
 
 
-function Input({placeHolder,type, ...rest} : props) {
+function Input({placeHolder,type, onInputChange, ...rest} : props) {
 
 
     const style  = {
@@ -34,8 +35,9 @@ function Input({placeHolder,type, ...rest} : props) {
     function handleInput (e:any){
         const inputItem = e.target.value
         setValue(inputItem)
-        console.log(value);
-        
+        if (onInputChange) {
+            onInputChange(inputItem);
+          }
     }
 
 

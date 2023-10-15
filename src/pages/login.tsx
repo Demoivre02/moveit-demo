@@ -1,10 +1,14 @@
 "use client"
-import React from 'react'
+import React, {useState} from 'react'
 
 import { useRouter } from 'next/router'
 import Link from 'next/link'
 
+import { signInWithEmailAndPassword } from 'firebase/auth';
+import { getAuth, GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
 
+import {auth} from '../firebase'
+import { useUser } from '@/context/usercontest';
 import Text from '@/components/text/text'
 import { Input } from '@/components/input/input'
 import { Box } from '@chakra-ui/react'
@@ -13,10 +17,44 @@ import { Box } from '@chakra-ui/react'
 function Signup() {
 
     const router = useRouter()
+    const { setUser } = useUser();
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
 
-    function handleSubmit(e:any){
-        e.preventDefault()
-        router.push("/location")
+    const handleEmail = (value: string) => {
+        setEmail(value);
+    };
+    const handlePasswords = (value: string) => {
+        setPassword(value);
+    };
+
+    const handleLogin = async (e: React.FormEvent) => {
+        e.preventDefault();
+        try {
+          await signInWithEmailAndPassword(auth, email, password);
+          
+          router.push('/location'); 
+
+        } catch (error) {
+            
+          console.error('Login error:', error);
+        }
+    }
+
+    const handleGoogleSignIn = async () => {
+        const authProvider = new GoogleAuthProvider();
+        const authInstance = getAuth();
+    
+        try {
+          const result = await signInWithPopup(authInstance, authProvider);
+          // Successful Google login
+          console.log('Google User:', result.user);
+          setUser(result.user);
+          router.push('/location'); 
+
+        } catch (error) {
+          console.error('Google login error:', error);
+        }
     }
 
   return (
@@ -39,12 +77,23 @@ function Signup() {
                     />
                 </Box>
             
-                <form style={formStyle} onSubmit={handleSubmit} action="">
+                <form style={formStyle} onSubmit={handleLogin} action="">
 
-                    <Input placeHolder='Email' type='email'/>
-                    <Input placeHolder='Password' type='password' />
+                    <Input 
+                        placeHolder='Email' 
+                        type='email'
+                        onInputChange={handleEmail}
+                    />
+                    <Input 
+                        placeHolder='Password' 
+                        type='password' 
+                        onInputChange={handlePasswords}
+                    />
                     <div style={buttonParent}>
                         <button style={buttonStyle}>Log in</button>
+                    </div>
+                    <div>
+                        <button onClick={handleGoogleSignIn}>Log in with google</button>
                     </div>
                     <div style={smallCont}>
                         <small style={small}>Don't have an account? {' '}
